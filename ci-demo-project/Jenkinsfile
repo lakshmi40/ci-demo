@@ -14,13 +14,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat '''
+                cd ci-demo-project
+                mvn clean install
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat '''
+                cd ci-demo-project
+                mvn test
+                '''
             }
         }
 
